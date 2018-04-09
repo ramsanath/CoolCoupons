@@ -16,7 +16,7 @@ class Card extends Component {
     render() {
         return (
             <Touchable style={styles.outerContainer} onPress={this.props.onPress} >
-                <View style={styles.innerContainer}>
+                <View style={styles.innerContainer} pointerEvents='box-only'>
                     <View style={styles.imageContainer}>
                         <Image
                             styleName='small'

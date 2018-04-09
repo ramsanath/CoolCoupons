@@ -7,8 +7,8 @@ import styles from './styles';
 class Row extends Component {
     render() {
         return (
-            <Touchable style={styles.outerContainer} onPress={this.props.onPress} >
-                <View style={styles.innerContainer}>
+            <Touchable style={styles.outerContainer} onPress={this.props.onPress}>
+                <View style={styles.innerContainer} pointerEvents='box-only'>
                     <View style={styles.imageContainer}>
                         <Image
                             styleName='small'
