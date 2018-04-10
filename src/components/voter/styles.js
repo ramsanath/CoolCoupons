@@ -1,7 +1,7 @@
 export default styles = {
     outerContainer: {
         height: '20%',
-        width: '100%',
+        width: '95%',
         padding: 0,
         flexDirection: 'row',
     },

@@ -1,5 +1,6 @@
 export default styles = {
     defaults: {
+        margin: 10,
         padding: 10,
         backgroundColor: 'white',
         elevation: 5,
