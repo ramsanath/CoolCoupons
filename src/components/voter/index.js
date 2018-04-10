@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import CardView from '../card-view/card-view';
+import CardView from '../card-view/index';
 import Touchable from 'react-native-platform-touchable';
 import { Title } from '@shoutem/ui';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import ButtonSwitchIcon from '../button-switch-icon/button-switch-icon';
+import ButtonSwitchIcon from '../button-switch-icon/index';
 import styles from './styles';
 
 

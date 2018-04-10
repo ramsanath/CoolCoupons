@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, ToastAndroid } from 'react-native';
-import CardView from '../card-view/card-view';
+import CardView from '../card-view/index';
 import { Title, Text } from '@shoutem/ui';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';

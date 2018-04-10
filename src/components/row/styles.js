@@ -1,7 +1,8 @@
 export default styles = {
     outerContainer: {
-        height: '15%',
-        width: '97%',
+        // height: '13%',
+        // width: '97%',
+        padding: 15,
         flexDirection: 'row',
         margin: 4,
         borderRadius: 3,
@@ -31,6 +32,8 @@ export default styles = {
         marginTop: 5
     },
     descContainer: {
+        flex: 1,
+        justifyContent: 'center',
         marginTop: 3,
         marginRight: 5,
     }

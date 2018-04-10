@@ -1,8 +1,9 @@
 export default styles = {
     outerContainer: {
-        height: '20%',
+        // height: '20%',
         width: '95%',
         padding: 0,
+        paddingVertical: 15,
         flexDirection: 'row',
     },
     vote: {

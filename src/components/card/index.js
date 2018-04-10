@@ -13,9 +13,18 @@ import styles from './styles'
  */
 class Card extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
-            <Touchable style={styles.outerContainer} onPress={this.props.onPress} >
+            <Touchable
+                style={[
+                    styles.outerContainer,
+                    this.props.style
+                ]}
+                onPress={this.props.onPress}>
                 <View style={styles.innerContainer} pointerEvents='box-only'>
                     <View style={styles.imageContainer}>
                         <Image

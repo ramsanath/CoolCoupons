@@ -3,7 +3,7 @@ import { View, TouchableNativeFeedback } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
-import SwitchIcon from '../switch-icon/switch-icon';
+import SwitchIcon from '../switch-icon/index';
 import { safeCall } from '../../misc/util';
 
 
