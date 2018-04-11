@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableNativeFeedback } from 'react-native';
+import { View, TouchableNativeFeedback, Animated, Easing } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
@@ -20,7 +20,7 @@ import { safeCall } from '../../misc/util';
  * background - (string) background color of the switch
  * enabled - (bool) A flag to indicate wheather the switch should be initialised as enabled
  * 
- * Info: The size of the icon inside the switch is 70% of the size 
+ * Info: The size of the icon inside the switch is 75% of the size 
  *          given by the user via this.props.size
  * 
  */
@@ -30,12 +30,28 @@ class ButtonSwitchIcon extends Component {
         super(props);
         this._getColorForIcon = this._getColorForIcon.bind(this);
         this._onPressed = this._onPressed.bind(this);
+        this.bounce = this.spring.bind(this);
         this.state = { enabled: props.enabled };
         this.defaultStyle = {
             width: this.props.size,
             height: this.props.size,
             backgroundColor: this.props.background || 'white'
         };
+        this.springVal = new Animated.Value(1);
+    }
+
+    /**
+     * A method to animate the icon when enabled
+     */
+    spring() {
+        this.springVal.setValue(0.3);
+        Animated.spring(
+            this.springVal,
+            {
+                toValue: 1,
+                friction: 4
+            }
+        ).start();
     }
 
     /**
@@ -74,14 +90,21 @@ class ButtonSwitchIcon extends Component {
      */
     _onPressed() {
         const enabledFlag = this._switchEnabledFlag();
-        enabledFlag ?
-            safeCall(this.props.onEnable) :
-            safeCall(this.props.onDisable)
+        if (enabledFlag) {
+            safeCall(this.props.onEnable);
+            this.spring();  // show animation now
+        } else {
+            safeCall(this.props.onDisable);
+        }
+
     }
 
     render() {
         const color = this._getColorForIcon();
         const iconSize = this.props.size / 1.5;
+
+        const spring = this.springVal
+
         return (
             <View style={[
                 styles.outerContainer,
@@ -93,7 +116,9 @@ class ButtonSwitchIcon extends Component {
                     style={styles.circleButton}
                     onPress={this._onPressed}>
                     <View pointerEvents='box-only'>
-                        <Icon name={this.props.icon} size={iconSize} color={color} />
+                        <Animated.Text style={{ transform: [{ scale: spring }] }} >
+                            <Icon name={this.props.icon} size={iconSize} color={color} />
+                        </Animated.Text>
                     </View>
                 </Touchable>
             </View>
