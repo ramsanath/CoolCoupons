@@ -7,6 +7,23 @@ import SwitchIcon from '../switch-icon/index';
 import { safeCall } from '../../misc/util';
 
 
+/**
+ * A component that shows an icon inside a circular view
+ * that can be used as a switch
+ * 
+ * Available props:
+ * icon - (string) - name of the icon to render
+ * size - (num) - size of the switch
+ * color - (string) - color of the icon when in enabled state.
+ * onEnable - (fn) callback on the event of enabling
+ * onDisable - (fn) callback on the event of disabling
+ * background - (string) background color of the switch
+ * enabled - (bool) A flag to indicate wheather the switch should be initialised as enabled
+ * 
+ * Info: The size of the icon inside the switch is 70% of the size 
+ *          given by the user via this.props.size
+ * 
+ */
 class ButtonSwitchIcon extends Component {
 
     constructor(props) {
@@ -64,7 +81,7 @@ class ButtonSwitchIcon extends Component {
 
     render() {
         const color = this._getColorForIcon();
-        const iconSize = 7000 / this.props.size;
+        const iconSize = this.props.size / 1.5;
         return (
             <View style={[
                 styles.outerContainer,

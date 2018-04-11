@@ -7,9 +7,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ButtonSwitchIcon from '../button-switch-icon/index';
 import styles from './styles';
 
-
+//  Default colors for positive and negative vote icons
 const pColor = 'green';
 const nColor = 'red';
+const disabledColor = 'grey';
 
 /**
  * A component to record positive and negative votes.
@@ -99,7 +100,7 @@ class Voter extends Component {
     _getCurrentPColor() {
         const { vote } = this.state
         return vote == '+' ?
-            (this.props.pColor || pColor) : 'grey'
+            (this.props.pColor || pColor) : disabledColor
     }
 
     /**
@@ -108,7 +109,7 @@ class Voter extends Component {
     _getCurrentNColor() {
         const { vote } = this.state
         return vote == '-' ?
-            (this.props.nColor || nColor) : 'grey'
+            (this.props.nColor || nColor) : disabledColor
     }
 
     render() {

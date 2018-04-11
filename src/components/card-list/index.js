@@ -6,6 +6,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 
+/**
+ * A component that shows a title and a list of text
+ * 
+ * Available props: 
+ * title - (string) title string
+ * data - (array of string) items to show as list
+ */
 class CardList extends Component {
 
     constructor(props) {
@@ -14,11 +21,19 @@ class CardList extends Component {
         this.listItemRenderer = this.listItemRenderer.bind(this);
     }
 
+    /**
+     * Gives a stylized text with a bullet
+     * 
+     * Info: Could be changed to display a user defined bullet style.
+     * 
+     * @param {*} item 
+     * @param {*} index 
+     */
     listItemRenderer(item, index) {
         const bullet = this.props.bullet || 'circle';
         return (
             <View key={index} style={styles.listItemContainer}>
-                <Icon style={styles.bullet} name={bullet} />
+                <Icon size={6} style={styles.bullet} name={bullet} />
                 <Text style={styles.listItemText} styleName='multiline'>{item}</Text>
             </View>
         );

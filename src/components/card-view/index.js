@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import styles from './styles';
 
-
+/**
+ * A stylised view with rounded corners, default padding and shadow property.
+ */
 class CardView extends Component {
     render() {
         let props = this.props

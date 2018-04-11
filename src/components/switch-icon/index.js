@@ -37,7 +37,7 @@ class SwitchIcon extends Component {
      * If no color is specified by the user then the default color is used
      * 
      * Note: The default color is hard-coded as 'maroon' should be modified to 
-     *          be more dynamic (example from the app theme)
+     *          be more dynamic (could be recieved from the app theme)
      */
     _getColorForIcon() {
         const color = this.props.color ? this.props.color : 'maroon';

@@ -4,6 +4,14 @@ import { Image, Title, Caption, Subtitle } from '@shoutem/ui';
 import Touchable from 'react-native-platform-touchable';
 import styles from './styles';
 
+/**
+ * A list item component with a image, title and short description which is touchable
+ * 
+ * Avaiable props: 
+ * image - (image) image to display
+ * title - (string) title of the list item
+ * desc - (string) short description.
+ */
 class Row extends Component {
     render() {
         return (

@@ -3,7 +3,15 @@ import { View, LinearGradient } from 'react-native';
 import { Title } from '@shoutem/ui';
 import Slideshow from 'react-native-slideshow';
 
-export default class SlideshowTest extends Component {
+
+/**
+ * A modified SlideShow component from 'react-native-slideshow'
+ * with a auto change images feature.
+ * 
+ * Available props:
+ * interval - (num) amount of time to display each image (units in ms).
+ */
+export default class ImageSlideshow extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,8 +41,7 @@ export default class SlideshowTest extends Component {
                 dataSource={this.props.dataSource}
                 position={this.state.position}
                 onPositionChanged={position => this.setState({ position })}
-                {...this.props}
-                />
+                {...this.props} />
         );
     }
 }
