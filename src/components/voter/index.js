@@ -5,6 +5,7 @@ import Touchable from 'react-native-platform-touchable';
 import { Title } from '@shoutem/ui';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ButtonSwitchIcon from '../button-switch-icon/index';
+import { safeCall } from '../../misc/util';
 import styles from './styles';
 
 //  Default colors for positive and negative vote icons
@@ -49,18 +50,24 @@ class Voter extends Component {
      */
     _onPositivePressed() {
         const currentVote = this.state.vote;
+        if (this.props.callbacks == undefined) return;
+        const {
+            onPositiveSelected,
+            onPositiveUnselected,
+            onNegativeUnselected
+        } = this.props.callbacks;
         switch (currentVote) {
             case '':
-                this.props.callbacks.onPositiveSelected();
+                safeCall(onPositiveSelected);
                 this.setState((state) => ({ vote: '+' }));
                 break;
             case '+':
-                this.props.callbacks.onPositiveUnselected();
+                safeCall(onPositiveUnselected);
                 this.setState((state) => ({ vote: '' }));
                 break;
             case '-':
-                this.props.callbacks.onPositiveSelected();
-                this.props.callbacks.onNegativeUnselected();
+                safeCall(onPositiveSelected);
+                safeCall(onNegativeUnselected);
                 this.setState((state) => ({ vote: '+' }));
                 break;
         }
@@ -76,19 +83,25 @@ class Voter extends Component {
      * Update the state accordingly.
      */
     _onNegativePressed() {
+        if (this.props.callbacks == undefined) return;
+        const {
+            onPositiveUnselected,
+            onNegativeUnselected,
+            onNegativeSelected
+        } = this.props.callbacks;
         const currentVote = this.state.vote;
         switch (currentVote) {
             case '':
-                this.props.callbacks.onNegativeSelected();
+                safeCall(onNegativeSelected);
                 this.setState((state) => ({ vote: '-' }));
                 break;
             case '-':
-                this.props.callbacks.onNegativeUnselected();
+                safeCall(onNegativeUnselected);
                 this.setState((state) => ({ vote: '' }));
                 break;
             case '+':
-                this.props.callbacks.onNegativeSelected();
-                this.props.callbacks.onPositiveUnselected();
+                safeCall(onNegativeSelected);
+                safeCall(onPositiveUnselected);
                 this.setState((state) => ({ vote: '-' }));
                 break;
         }
