@@ -1,14 +1,17 @@
+import dim from '../../values/dim';
+import colors from '../../values/color';
+
 export default styles = {
     defaults: {
-        margin: 10,
-        padding: 10,
-        backgroundColor: 'white',
-        elevation: 5,
-        shadowOpacity: 0.3,
-        shadowOffset: { height: 0, width: 0 },
+        margin: dim.defaultMargin,
+        padding: dim.defaultPadding,
+        borderRadius: dim.defaultBorderRadius,
+        backgroundColor: colors.defaultBgColor,
+        elevation: dim.defaultElevation,
+        shadowOpacity: dim.defaultShadowOpacity,
+        shadowOffset: dim.defaultShadowOffset,
     },
     needed: {
-        borderRadius: 10,
         shadowColor: 'black',
     }
 }

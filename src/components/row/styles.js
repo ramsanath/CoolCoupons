@@ -1,34 +1,42 @@
+import dim from '../../values/dim';
+
 export default styles = {
     outerContainer: {
-        // height: '13%',
-        // width: '97%',
-        padding: 15,
+        width: dim.listItemWidth,
+        height: dim.listItemHeight,
+        paddingVertical: dim.listItemDefPadV,
+        paddingHorizontal: dim.listItemDefPadH,
         flexDirection: 'row',
-        margin: 4,
-        borderRadius: 3,
+        marginHorizontal: dim.listItemDefMarginH,
+        marginVertical: dim.listItemDefMarginV,
+        borderRadius: dim.defaultBorderRadius,
         backgroundColor: 'white',
-        elevation: 10,
-        shadowOpacity: 0.3,
+        elevation: dim.defaultElevation,
+        shadowOpacity: dim.defaultShadowOpacity,
         shadowColor: 'black',
-        shadowOffset: { height: 0, width: 0 },
+        shadowOffset: dim.defaultShadowOffset,
     },
     innerContainer: {
         flex: 1,
         flexDirection: 'row',
     },
     imageContainer: {
+        flex: 1.5,
+        flexDirection: 'row',
+    },
+    image: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        width: undefined,
+        height: undefined,
+        resizeMode: 'center',
     },
     textContainer: {
-        flex: 3,
+        flex: 6,
         flexDirection: 'column',
-        padding: 3,
         marginLeft: 10,
     },
     title: {
+        color: '#2b2b2b',
         marginTop: 5
     },
     descContainer: {
@@ -36,5 +44,11 @@ export default styles = {
         justifyContent: 'center',
         marginTop: 3,
         marginRight: 5,
+    },
+    subtitle: {
+        color: '#686868',
+    },
+    desc: {
+        color: '#444444'
     }
 }

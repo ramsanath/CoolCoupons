@@ -18,7 +18,7 @@ export default styles = {
         flexDirection: 'row',
     },
     listItemText: {
-        fontSize: 18,
+        fontSize: 16,
     },
     bullet: {
         paddingRight: 10

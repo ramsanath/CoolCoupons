@@ -1,23 +1,42 @@
-import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { Image, Title } from '@shoutem/ui';
+import React, {Component} from 'react';
+import {Image, View, Text} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import styles from './styles'
+import {textStyles} from '../../theme';
+
 
 /**
  *  A simple card component that shows an title and image.
  *  Available props: image, title, onPress
- * 
+ *
  *  Info: The card is encapsulated by Touchable from 'react-native-platform-touchable'
  *  which uses TouchableNativeFeedback in Android and TouchableOpacity in iOS.
+ *
+ *  Note: Should set the dimensions of the card dynamically based on the screen size
+ *          and the image inside the card respectively.
  */
-class Card extends Component {
+class SmallImageCard extends Component {
 
     constructor(props) {
         super(props);
     }
 
+    /**
+     * A method to truncate text that is longer then 10 characters
+     * @param {*} text
+     *
+     * Warn: Should avoid this and find a smarter solution
+     */
+    _truncate(text) {
+        if (typeof text != 'string') return;
+        if (text.length <= 10) return text;
+        let newText = text.substr(0, 10);
+        newText += '..';
+        return newText;
+    }
+
     render() {
+        // const title = this._truncate(this.props.title);
         return (
             <Touchable
                 style={[
@@ -28,11 +47,12 @@ class Card extends Component {
                 <View style={styles.innerContainer} pointerEvents='box-only'>
                     <View style={styles.imageContainer}>
                         <Image
-                            styleName='small'
-                            source={this.props.image} />
+                            resizeMode="contain"
+                            style={styles.image}
+                            source={this.props.image}/>
                     </View>
                     <View styleName="vertical" style={styles.textContainer}>
-                        <Title styleName='bold' >{this.props.title}</Title>
+                        <Text style={[textStyles.subhead, styles.title]}>{this.props.title}</Text>
                     </View>
                 </View>
             </Touchable>
@@ -40,4 +60,4 @@ class Card extends Component {
     }
 }
 
-export default Card;
+export default SmallImageCard;

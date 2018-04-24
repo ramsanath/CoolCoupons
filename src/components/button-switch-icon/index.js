@@ -4,7 +4,7 @@ import Touchable from 'react-native-platform-touchable';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import SwitchIcon from '../switch-icon/index';
-import { safeCall } from '../../misc/util';
+import { safeCall } from '../../commons/util';
 
 
 /**
@@ -103,7 +103,7 @@ class ButtonSwitchIcon extends Component {
         const color = this._getColorForIcon();
         const iconSize = this.props.size / 1.5;
 
-        const spring = this.springVal
+        const spring = this.springVal;
 
         return (
             <View style={[
