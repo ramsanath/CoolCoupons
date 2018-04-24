@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { Image, Title, Caption, Subtitle } from '@shoutem/ui';
+import React, {Component} from 'react';
+import {Image, View, Text} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
+import {textStyles} from '../../theme';
 import styles from './styles';
 
 /**
  * A list item component with a image, title and short description which is touchable
- * 
- * Avaiable props: 
+ *
+ * Avaiable props:
  * image - (image) image to display
  * title - (string) title of the list item
  * desc - (string) short description.
@@ -17,19 +17,19 @@ class Row extends Component {
         return (
             <Touchable style={styles.outerContainer} onPress={this.props.onPress}>
                 <View style={styles.innerContainer} pointerEvents='box-only'>
-                    <View style={styles.imageContainer}>
+                    <View
+                        style={styles.imageContainer}>
                         <Image
-                            styleName='small'
-                            source={this.props.image} />
+                            style={styles.image}
+                            source={this.props.image}/>
                     </View>
                     <View styleName="vertical" style={styles.textContainer}>
-                        <Title style={styles.title} styleName='bold' >{this.props.title}</Title>
-                        <Caption>{this.props.subtitle}</Caption>
+                        <Text style={[textStyles.headline, styles.title]} styleName='bold'>{this.props.title}</Text>
+                        <Text style={[textStyles.caption1, styles.subtitle]}>{this.props.shop}</Text>
                         <View style={styles.descContainer}>
-                            <Subtitle>{this.props.desc}</Subtitle>
+                            <Text style={[textStyles.subhead, styles.desc]}>{this.props.desc}</Text>
                         </View>
                     </View>
-
                 </View>
             </Touchable>
         );

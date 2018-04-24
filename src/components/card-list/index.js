@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, ToastAndroid } from 'react-native';
+import {View, Text} from 'react-native';
 import CardView from '../card-view/index';
-import { Title, Text } from '@shoutem/ui';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
@@ -48,7 +47,7 @@ class CardList extends Component {
     render() {
         return (
             <CardView style={styles.container}>
-                <Title style={styles.title}>{this.props.title}</Title>
+                <Text style={styles.title}>{this.props.title}</Text>
                 <View style={styles.listItemsContainer} >
                     {this.getListItems()}
                 </View>

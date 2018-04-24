@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import CardView from '../card-view/index';
 import Touchable from 'react-native-platform-touchable';
-import { Title } from '@shoutem/ui';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ButtonSwitchIcon from '../button-switch-icon/index';
-import { safeCall } from '../../misc/util';
+import { safeCall } from '../../commons/util';
 import styles from './styles';
 
 //  Default colors for positive and negative vote icons
@@ -133,16 +132,16 @@ class Voter extends Component {
             <CardView style={styles.outerContainer}>
                 <Touchable style={styles.voteContainer} onPress={this._onNegativePressed}>
                     <View pointerEvents='box-only' style={styles.vote} >
-                        <Title> {this.props.data.nCount} </Title>
+                        <Text> {this.props.data.nCount} </Text>
                         <Icon style={styles.icon} color={nColor} size={60} name='thumbs-down' />
-                        <Title styleName='bold'>Sucks</Title>
+                        <Text styleName='bold'>Sucks</Text>
                     </View>
                 </Touchable>
                 <Touchable style={styles.voteContainer} onPress={this._onPositivePressed}>
                     <View pointerEvents='box-only' style={styles.vote} >
-                        <Title> {this.props.data.pCount} </Title>
+                        <Text> {this.props.data.pCount} </Text>
                         <Icon style={styles.icon} color={pColor} size={60} name='thumbs-up' />
-                        <Title styleName='bold'>Works</Title>
+                        <Text styleName='bold'>Works</Text>
                     </View>
                 </Touchable>
             </CardView>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, ToastAndroid } from 'react-native';
+import { View, Text, ToastAndroid, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { TouchableOpacity } from '@shoutem/ui';
-import { safeCall } from '../../misc/util';
+import { safeCall } from '../../commons/util';
 
 
 /**
