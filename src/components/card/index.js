@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {Image, View, Text} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import styles from './styles'
-import {textStyles} from '../../theme';
+import {textStyles} from '../../theme/theme';
+import {getHuman, getMaterial} from "../../commons/helper";
+import {isIos} from "../../commons/util";
 
 
 /**
@@ -37,6 +39,8 @@ class SmallImageCard extends Component {
 
     render() {
         // const title = this._truncate(this.props.title);
+        const titleTextStyle = getHuman('headline');
+
         return (
             <Touchable
                 style={[
@@ -52,7 +56,7 @@ class SmallImageCard extends Component {
                             source={this.props.image}/>
                     </View>
                     <View styleName="vertical" style={styles.textContainer}>
-                        <Text style={[textStyles.subhead, styles.title]}>{this.props.title}</Text>
+                        <Text style={[styles.title, titleTextStyle]}>{this.props.title}</Text>
                     </View>
                 </View>
             </Touchable>

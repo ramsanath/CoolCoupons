@@ -1,3 +1,6 @@
+import {Platform} from 'react-native';
+
+
 export function safeCall(fn) {
     if (typeof fn == 'function') {
         fn();
@@ -22,4 +25,8 @@ export function percent(p) {
             return (p * b) / 100;
         }
     })
+}
+
+export function isIos() {
+    return Platform.OS == 'ios';
 }

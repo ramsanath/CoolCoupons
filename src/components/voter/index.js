@@ -8,8 +8,8 @@ import { safeCall } from '../../commons/util';
 import styles from './styles';
 
 //  Default colors for positive and negative vote icons
-const pColor = 'green';
-const nColor = 'red';
+const pColor = 'seagreen';
+const nColor = 'firebrick';
 const disabledColor = 'grey';
 
 /**

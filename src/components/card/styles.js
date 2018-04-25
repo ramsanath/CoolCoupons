@@ -1,5 +1,6 @@
 import dim from "../../values/dim";
 import colors from "../../values/color";
+import theme from "../../theme/theme";
 
 export default styles = {
     outerContainer: {
@@ -10,12 +11,12 @@ export default styles = {
         padding: dim.defaultPadding + 3,
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundColor: colors.defaultBgColor,
         borderRadius: dim.defaultBorderRadius,
         elevation: dim.defaultElevation,
         shadowOpacity: dim.defaultShadowOpacity,
-        shadowColor: 'black',
+        shadowColor: theme.shadowColor,
         shadowOffset: dim.defaultShadowOffset,
+        backgroundColor: theme.primaryBgColor,
     },
     innerContainer: {
         flex: 1,
@@ -42,6 +43,6 @@ export default styles = {
     title: {
         flex: 1,
         textAlign: 'center',
-        color: '#2b2b2b',
+        color: theme.primaryFontColor,
     }
 }

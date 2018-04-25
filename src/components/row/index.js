@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Image, View, Text} from 'react-native';
 import Touchable from 'react-native-platform-touchable';
-import {textStyles} from '../../theme';
+import {textStyles} from '../../theme/theme';
 import styles from './styles';
 
 /**
@@ -12,7 +12,7 @@ import styles from './styles';
  * title - (string) title of the list item
  * desc - (string) short description.
  */
-class Row extends Component {
+class CouponRow extends Component {
     render() {
         return (
             <Touchable style={styles.outerContainer} onPress={this.props.onPress}>
@@ -23,9 +23,9 @@ class Row extends Component {
                             style={styles.image}
                             source={this.props.image}/>
                     </View>
-                    <View styleName="vertical" style={styles.textContainer}>
-                        <Text style={[textStyles.headline, styles.title]} styleName='bold'>{this.props.title}</Text>
-                        <Text style={[textStyles.caption1, styles.subtitle]}>{this.props.shop}</Text>
+                    <View style={styles.textContainer}>
+                        <Text style={[textStyles.headline, styles.title]} >{this.props.title}</Text>
+                        <Text style={[textStyles.caption1, styles.store]}>{this.props.shop}</Text>
                         <View style={styles.descContainer}>
                             <Text style={[textStyles.subhead, styles.desc]}>{this.props.desc}</Text>
                         </View>
@@ -36,4 +36,4 @@ class Row extends Component {
     }
 }
 
-export default Row;
+export default CouponRow;

@@ -1,0 +1,174 @@
+{
+  "shopImages": [
+    {
+      "id": 1,
+      "name": "Domino's Pizza",
+      "image": "https://vignette.wikia.nocookie.net/logopedia/images/7/74/Dominos_pizza_logo.svg/revision/latest/scale-to-width-down/200?cb=20130325115203",
+      "popularity": 5,
+      "tags": [
+        {
+          "1": true,
+          "id": 1,
+          "name": "Food"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "FoodPanda",
+      "image": "https://www.featuredcustomers.com/media/Company.logo/Foodpanda_logo_2.png",
+      "popularity": 5,
+      "tags": [
+        {
+          "1": true,
+          "id": 1,
+          "name": "Food"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Amazon.in",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Amazon_logo_plain.svg/2000px-Amazon_logo_plain.svg.png",
+      "popularity": 5,
+      "category": {
+        "2": true,
+        "id": 2,
+        "name": "Shopping"
+      },
+      "tags": [
+        {
+          "2": true,
+          "id": 2,
+          "name": "Shopping"
+        }
+      ]
+    }
+  ],
+  "coupons": [
+    {
+      "1": true,
+      "id": 1,
+      "name": "50% off on all medium sized pizzas",
+      "description": "50% off on all medium sized pizzas for a limited time at Domino's",
+      "upVoteCount": 20,
+      "downVoteCount": 3,
+      "addedOn": 1523717453885,
+      "expiresOn": 1536971953885,
+      "shop": {
+        "1": true,
+        "id": 1,
+        "name": "Domino's"
+      },
+      "tags": [
+        {
+          "1": true,
+          "id": 1
+        },
+        {
+          "3": true,
+          "id": 3
+        }
+      ]
+    },
+    {
+      "2": true,
+      "id": 2,
+      "name": "Get a free coke on your first order",
+      "description": "Get a coke free with your first order on FoodPanda",
+      "upVoteCount": 56,
+      "downVoteCount": 13,
+      "addedOn": 1523717455885,
+      "expiresOn": 1536971953885,
+      "shop": {
+        "2": true,
+        "id": 2,
+        "name": "Food Panda"
+      },
+      "tags": [
+        {
+          "1": true,
+          "id": 1
+        }
+      ]
+    },
+    {
+      "3": true,
+      "id": 3,
+      "name": "Cashback upto 20% on mobile phone exchange",
+      "description": "Get cashback upto 20% (max Rs.3000) on mobile phone exchange",
+      "upVoteCount": 43,
+      "downVoteCount": 23,
+      "addedOn": 1523717553885,
+      "expiresOn": 1536971953885,
+      "shop": {
+        "3": true,
+        "id": 3,
+        "name": "Amazon"
+      },
+      "tags": [
+        {
+          "2": true,
+          "id": 2
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": {
+        "first": "Rahul",
+        "last": "Kumar"
+      },
+      "joinedOn": 1523718200104,
+      "email": "rahulkumar123@somewhere.com",
+      "password": "password",
+      "mobile": "9876765470",
+      "subscriptions": [
+        {
+          "id": 1,
+          "shopId": 1
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Pizzas",
+      "category": {
+        "id": 1,
+        "1": true
+      }
+    },
+    {
+      "id": 2,
+      "name": "Smart Phones",
+      "category": {
+        "id": 2,
+        "2": true
+      }
+    },
+    {
+      "id": 3,
+      "name": "Food",
+      "category": {
+        "id": 1,
+        "1": true
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Food and Dining",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "name": "Electronics",
+      "image": ""
+    }
+  ]
+}

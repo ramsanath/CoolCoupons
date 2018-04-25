@@ -25,7 +25,7 @@ class CardList extends Component {
      * 
      * Info: Could be changed to display a user defined bullet style.
      * 
-     * @param {*} item 
+     * @param {*} item
      * @param {*} index 
      */
     listItemRenderer(item, index) {
@@ -33,7 +33,7 @@ class CardList extends Component {
         return (
             <View key={index} style={styles.listItemContainer}>
                 <Icon size={6} style={styles.bullet} name={bullet} />
-                <Text style={styles.listItemText} styleName='multiline'>{item}</Text>
+                <Text style={styles.listItemText}>{item}</Text>
             </View>
         );
     }

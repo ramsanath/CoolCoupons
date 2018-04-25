@@ -1,4 +1,5 @@
 import dim from '../../values/dim';
+import theme from "../../theme/theme";
 
 export default styles = {
     outerContainer: {
@@ -10,7 +11,7 @@ export default styles = {
         marginHorizontal: dim.listItemDefMarginH,
         marginVertical: dim.listItemDefMarginV,
         borderRadius: dim.defaultBorderRadius,
-        backgroundColor: 'white',
+        backgroundColor: theme.primaryBgColor,
         elevation: dim.defaultElevation,
         shadowOpacity: dim.defaultShadowOpacity,
         shadowColor: 'black',
@@ -36,7 +37,7 @@ export default styles = {
         marginLeft: 10,
     },
     title: {
-        color: '#2b2b2b',
+        color: theme.primaryFontColor,
         marginTop: 5
     },
     descContainer: {
@@ -45,10 +46,10 @@ export default styles = {
         marginTop: 3,
         marginRight: 5,
     },
-    subtitle: {
-        color: '#686868',
+    store: {
+        color: theme.primaryFontColorLight,
     },
     desc: {
-        color: '#444444'
+        color: theme.secondaryFontColor
     }
 }

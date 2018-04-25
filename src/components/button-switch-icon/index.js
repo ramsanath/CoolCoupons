@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import SwitchIcon from '../switch-icon/index';
 import { safeCall } from '../../commons/util';
+import theme from "../../theme/theme";
 
 
 /**
@@ -112,7 +113,7 @@ class ButtonSwitchIcon extends Component {
                 this.props.style
             ]}>
                 <Touchable
-                    background={TouchableNativeFeedback.Ripple('grey', true)}
+                    background={TouchableNativeFeedback.Ripple(theme.rippleColor, true)}
                     style={styles.circleButton}
                     onPress={this._onPressed}>
                     <View pointerEvents='box-only'>
