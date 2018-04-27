@@ -60,28 +60,28 @@ const styles = {
     outerContainer: {
         height: dim.listItemHeight,
         flexDirection: 'row',
-        paddingVertical: 20,
         justifyContent: 'center',
         backgroundColor: theme.primaryBgColor
     },
     imageContainer: {
         flex: 1,
+        marginVertical: 10,
+        marginHorizontal: 5,
         flexDirection: 'row',
     },
     image: {
         flex: 1,
         width: undefined,
         height: undefined,
-        resizeMode: 'center',
+        resizeMode: 'contain',
     },
     textContainer: {
         flex: 2,
-        paddingLeft: 10,
         flexDirection: 'column',
         justifyContent: 'space-around',
     },
     storeText: {
-        paddingBottom: 3
+
     },
     categoryText: {
         color: theme.secondaryFontColor

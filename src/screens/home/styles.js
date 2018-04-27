@@ -1,4 +1,9 @@
+import theme from "../../theme/theme";
+
 export default styles = {
+    outerContainer: {
+        backgroundColor: theme.primaryScreenBgColor,
+    },
     cardContainer: {
         flex: 1,
         marginTop: 5,
@@ -7,7 +12,7 @@ export default styles = {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     shopsContainer: {
         flex: 1,

@@ -1,5 +1,4 @@
 import dim from "../../values/dim";
-import colors from "../../values/color";
 import theme from "../../theme/theme";
 
 export default styles = {

@@ -1,6 +1,6 @@
 
 
-export default theme = {
+export const theme = {
     primaryBgColor: '#FEFEFD',
     primaryScreenBgColor: '#FEFEFD',
 
@@ -22,7 +22,7 @@ export default theme = {
     rippleColor: '#E7E7E6',
 
     fontFamily: undefined,
-}
+};
 
 export const textStyles = {
     title1: {
@@ -48,6 +48,7 @@ export const textStyles = {
     },
     headline: {
         fontFamily: theme.fontFamily,
+        color: theme.primaryFontColor,
         fontSize: 17,
         fontWeight: '600',
         lineHeight: 22,
@@ -95,3 +96,6 @@ export const textStyles = {
         letterSpacing: 0.066
     },
 };
+
+
+export default theme;

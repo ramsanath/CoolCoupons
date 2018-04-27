@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View} from 'react-native';
 import CardView from "../card-view";
 import dim from "../../values/dim";
+import theme from "../../theme/theme";
 
 
 class ListLoader extends Component {
@@ -17,6 +18,7 @@ class ListLoader extends Component {
                         marginHorizontal: dim.listItemDefMarginH,
                         marginVertical: dim.listItemDefMarginV,
                         borderRadius: dim.defaultBorderRadius,
+                        backgroundColor: theme.primaryBgColor,
                     }}>
 
                 </CardView>

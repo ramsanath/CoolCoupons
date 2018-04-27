@@ -38,8 +38,6 @@ class SmallImageCard extends Component {
     }
 
     render() {
-        // const title = this._truncate(this.props.title);
-        const titleTextStyle = getHuman('headline');
 
         return (
             <Touchable
@@ -56,7 +54,7 @@ class SmallImageCard extends Component {
                             source={this.props.image}/>
                     </View>
                     <View styleName="vertical" style={styles.textContainer}>
-                        <Text style={[styles.title, titleTextStyle]}>{this.props.title}</Text>
+                        <Text style={[styles.title]}>{this.props.title}</Text>
                     </View>
                 </View>
             </Touchable>
