@@ -26,3 +26,8 @@ test('should retrieve the coupons along with the respective shop data', async ()
     const couponsWithShops = await HomeRepo.getTopNCouponsShops(1);
     expect(couponsWithShops[0].shop.image).toBeTruthy();
 });
+
+test('should get N categories', async () => {
+    const categories = await HomeRepo.getCategories(1);
+    expect(categories.length).toEqual(1);
+});
